@@ -11,15 +11,24 @@
 </head>
 
 <body>
-<!-- Navigation Bar -->
+  <!-- Navigation Bar -->
   <div class="container">
     <ul class="nav nav-tabs">
       <li><%= link_to "Home", welcome_index_path %></li>
       <li><%= link_to "About", welcome_about_path %></li>
       <!-- <li><%= link_to "Sign out", destroy_user_session_path %></li> -->
+
+      <% if current_user %>
       <li class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+
+
+      <% else %>
+      <li class="pull-right"><%= link_to "Sign In", new_user_session_path, class: "nav-link btn btn-primary"  %></li>
+      <li class="pull-right"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link btn btn-primary" %></li>
+      <% end %>
+
     </ul>
- <!-- Flash Messages  -->
+    <!-- Flash Messages  -->
 
 
     <%= yield %>
