@@ -16,12 +16,11 @@
     <ul class="nav nav-tabs">
       <li><%= link_to "Home", welcome_index_path %></li>
       <li><%= link_to "About", welcome_about_path %></li>
+      <!-- <li><%= link_to "Sign out", destroy_user_session_path %></li> -->
+      <li class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
     </ul>
  <!-- Flash Messages  -->
-<% flash.each do |name, message| %>
 
-<% content_tag(:div, message, class: "alert alert-info #{name}") %>
-<% end %>
 
     <%= yield %>
   </div>
