@@ -11,12 +11,17 @@
 </head>
 
 <body>
-
+<!-- Navigation Bar -->
   <div class="container">
     <ul class="nav nav-tabs">
       <li><%= link_to "Home", welcome_index_path %></li>
       <li><%= link_to "About", welcome_about_path %></li>
     </ul>
+ <!-- Flash Messages  -->
+<% flash.each do |name, message| %>
+
+<% content_tag(:div, message, class: "alert alert-info #{name}") %>
+<% end %>
 
     <%= yield %>
   </div>
