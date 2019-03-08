@@ -1,2 +1,2 @@
-class Wiki2 < ApplicationRecord
-end
+# class Wiki2 < ApplicationRecord
+# end

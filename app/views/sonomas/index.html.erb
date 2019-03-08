@@ -1,0 +1,12 @@
+<h1>All Wikis</h1>
+
+<% @sonomas.each do |sonoma| %>
+<div class="media">
+  <div class="media-body">
+    <h4 class="media-heading">
+      <%= link_to sonoma.title, sonoma %>
+    </h4>
+  </div>
+</div>
+
+<% end %>
