@@ -16,19 +16,16 @@
     <ul class="nav nav-tabs">
       <li><%= link_to "Blocipedia", root_path %></li>
       <li><%= link_to "About", about_path %></li>
-      <!-- <li><%= link_to "Sign out", destroy_user_session_path %></li> -->
+      <li><%= link_to "Wikis", sonomas_path %></li>
 
       <% if current_user %>
       <li class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-
 
       <% else %>
       <li class="pull-right"><%= link_to "Sign In", new_user_session_path, class: "nav-link btn btn-primary"  %></li>
       <li class="pull-right"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link btn btn-primary" %></li>
       <% end %>
-
     </ul>
-
 
     <% if flash[:notice] %>
     <div class="alert alert-success">
@@ -41,8 +38,6 @@
       <%= flash[:alert] %>
     </div>
     <% end %>
-
-
 
     <%= yield %>
   </div>
